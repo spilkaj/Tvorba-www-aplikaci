@@ -1,18 +1,18 @@
 <?php include 'includes/header.php';?>
 
         <div class="center_button"> 
-            <button onclick="playPause()">Přehrát/Zastavit</button><span class="velikost_videa">Velikost videa:</span> 
-            <button onclick="makeBig()">Velké</button>
-            <button onclick="makeNormal()">Normální</button>
-            <button onclick="makeSmall()">Malé</button>
+            <button id="togglePlay">Přehrát/Zastavit</button><span class="velikost_videa">Velikost videa:</span> 
+            <button id="makeBig">Velké</button>
+            <button id="makeNormal">Normální</button>
+            <button id="makeSmall">Malé</button>
             <br>
             <span class="vyber_kapitoly">Výběr konkrétní části videa:</span>
-            <button onclick="chapter1(); summonText1();">Procesor</button> 
-            <button onclick="chapter2(); summonText2();">Základní deska</button>
-            <button onclick="chapter3(); summonText3();">Grafická karta</button>
-            <button onclick="chapter4(); summonText4();">Operační paměti</button>
-            <button onclick="chapter5(); summonText5();">Pevné disky</button>
-            <button onclick="chapter6(); summonText6();">SSD disk</button>
+            <button id="procesor">Procesor</button> 
+            <button id="motherBoard">Základní deska</button>
+            <button id="gpu">Grafická karta</button>
+            <button id="ram">Operační paměti</button>
+            <button id="hdd">Pevné disky</button>
+            <button id="ssd">SSD disk</button>
         </div>
             <br>
             <video class="center" controls id="video1" width="1080">

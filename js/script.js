@@ -1,12 +1,5 @@
 var myVideo = document.getElementById("video1"); 
             
-            function playPause() { 
-              if (myVideo.paused) 
-                myVideo.play(); 
-              else 
-                myVideo.pause(); 
-            } 
-            
             function makeBig() { 
                 myVideo.width = 1200; 
             } 
@@ -55,4 +48,48 @@ var myVideo = document.getElementById("video1");
                     }
                     function summonText5(){
                         document.getElementById("text_kapitola").innerHTML = "Kapitola: SSD disk";
-                    }        
+                    } 
+class Controler{
+    constructor(model, view){
+        this.model = model;
+        this.view = view;
+        this.addOnListenControls();
+    }
+    addOnListenControls(){
+        let togglePlay = document.getElementById("togglePlay")
+        let makeBig = document.getElementById("makeBig")
+        let makeNormal = document.getElementById("makeNormal")
+        let makeSmall = document.getElementById("makeSmall")
+
+        togglePlay.addEventListener("click",function(){
+            this.togglePlay();
+        }.bind(this))
+        makeBig.addEventListener("click",function(){
+            this.view.changeWidth("1200");
+        }.bind(this))
+        makeNormal.addEventListener("click",function(){
+            this.view.changeWidth("1080");
+        }.bind(this))
+        makeSmall.addEventListener("click",function(){
+            this.view.changeWidth("720");
+        }.bind(this))
+    }
+    togglePlay(){
+        let myVideo = document.getElementById("video1")
+        if (myVideo.paused) 
+                myVideo.play(); 
+        else 
+                myVideo.pause();
+    }
+}    
+class Model{
+
+}
+class View{
+    changeWidth(width){
+        let video = document.getElementById("video1");
+        video.width = width
+    }
+}
+const app = new Controler(new Model(),new View());
+
