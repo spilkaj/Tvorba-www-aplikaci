@@ -44,7 +44,7 @@
             </div>
 
             <?php include 'includes/footer.php';?>
-        <script src="js/javascript.js"></script>
+        <script src="js/script.js"></script>
 
     <body>
 </html>
