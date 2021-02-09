@@ -16,31 +16,11 @@
         </div>
             <br>
             <video class="center" controls id="video1" width="1080">
-              <source src="Návod na složení PC_final.mp4" type="video/mp4">
-              <source src="Návod na složení PC_final.mp4" type="video/ogg">
+              <source src="video.mp4" type="video/mp4">
+              <source src="video.mp4" type="video/ogg">
               Váš prohlížeč nepodporuje HTML video.
             </video>
             <div id="text_kapitola">Video obsahuje komentář a podkresovou hudbu, zapněte si prosím zvuk!
-                <script>
-                    function summonText1(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Procesor";
-                    }
-                    function summonText2(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Základní deska";
-                    }
-                    function summonText3(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Grafická karta";
-                    }
-                    function summonText4(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Operační paměti";
-                    }
-                    function summonText5(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Pevné disky";
-                    }
-                    function summonText6(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: SSD disk";
-                    }
-                </script>
             </div>
 
             <?php include 'includes/footer.php';?>

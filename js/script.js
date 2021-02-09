@@ -37,3 +37,22 @@ var myVideo = document.getElementById("video1");
             function chapter6() { 
                 myVideo.currentTime = 38;
             } 
+
+        function summonText0(){
+                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Procesor";
+                    }
+                    function summonText1(){
+                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Základní deska";
+                    }
+                    function summonText2(){
+                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Grafická karta";
+                    }
+                    function summonText3(){
+                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Operační paměti";
+                    }
+                    function summonText4(){
+                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Pevné disky";
+                    }
+                    function summonText5(){
+                        document.getElementById("text_kapitola").innerHTML = "Kapitola: SSD disk";
+                    }        
