@@ -15,11 +15,40 @@
             <button id="ssd">SSD disk</button>
         </div>
             <br>
+            <!-- Nový kód -->
+            <div class="grid-container">
+            <aside>
+            <div class="todoList">
+                <h3>
+                    Poznámky
+                </h3>
+                <div class="form-row">
+                    <div class="col-8 mr-sm-2">
+                        <input type="text" class="newNoteInput" placeholder="Přidat novou poznámku ..."
+                               id="addtaskinput"/>
+                        <input type="hidden" id="saveindex">
+                    </div>
+                    <button type="button" class="notesBtn btnAdd" id="addtaskbtn">
+                       Přidat
+                    </button>
+                    <button type="button" class="notesBtn btnEdit" id="savetaskbtn"
+                            style="display: none;">
+                       Upravit
+                    </button>
+                </div>
+                <div class="to-do-output">
+                    <table id="addedtasklist">
+                    </table>
+                </div>
+        </aside>
+        <!-- Konec nového kodu -->
+
             <video class="center" controls id="video1" width="1080">
               <source src="video.mp4" type="video/mp4">
               <source src="video.mp4" type="video/ogg">
               Váš prohlížeč nepodporuje HTML video.
             </video>
+        </div>
             <div id="text_kapitola">Video obsahuje komentář a podkresovou hudbu, zapněte si prosím zvuk!
             </div>
 
