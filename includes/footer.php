@@ -6,4 +6,4 @@
             <p>Pedagogická fakulta</p>
             <p>KITTV</p>
             <p>Univerzita Karlova</p>
-        </footer>
+</footer>
