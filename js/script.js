@@ -125,12 +125,15 @@ class View {
 }
 const app = new Controler(new Model(), new View());
 
+//add notes
+
 showtask();
 let addtaskinput = document.getElementById("addtaskinput");
 let addtaskbtn = document.getElementById("addtaskbtn");
 
 addtaskbtn.addEventListener("click", function () {
   addtaskinputval = addtaskinput.value;
+  let video = document.getElementById("video1");
   if (addtaskinputval.trim() != 0) {
     let webtask = localStorage.getItem("localtask");
     if (webtask === null) {
@@ -138,7 +141,11 @@ addtaskbtn.addEventListener("click", function () {
     } else {
       taskObj = JSON.parse(webtask);
     }
-    taskObj.push({ task_name: addtaskinputval, completeStatus: false });
+    taskObj.push({
+      task_name: addtaskinputval,
+      completeStatus: false,
+      videoTime: Math.round(video.currentTime),
+    });
     localStorage.setItem("localtask", JSON.stringify(taskObj));
     addtaskinput.value = "";
   }
@@ -161,15 +168,23 @@ function showtask() {
     } else {
       taskCompleteValue = `<td class="displayNote">${item.task_name}</td>`;
     }
+    var minutes = Math.floor(item.videoTime / 60);
+    var seconds = item.videoTime % 60;
+    var formatted =
+      minutes.toString().padStart(2, "0") +
+      ":" +
+      seconds.toString().padStart(2, "0");
     html += `<tr class="noteRow">
                     <th scope="row">${index + 1}</th>
                     ${taskCompleteValue}
+                    <td>${formatted}</td>
                     <td><button type="button" class="notesBtn btnEdit " onclick="edittask(${index})" class="text-primary">
                     Upravit
                     </button></td>
                     <td><button type="button" class="notesBtn btnDeleteAll " onclick="deleteitem(${index})" class="text-danger">
                     Smazat
                     </button></td>
+                    
                 </tr>`;
   });
   addedtasklist.innerHTML = html;
@@ -246,24 +261,4 @@ addedtasklist.addEventListener("click", function (e) {
     localStorage.setItem("localtask", JSON.stringify(taskObj));
     showtask();
   }
-});
-
-//deleteall
-let deleteallbtn = document.getElementById("deleteallbtn");
-deleteallbtn.addEventListener("click", function () {
-  let savetaskbtn = document.getElementById("savetaskbtn");
-  let addtaskbtn = document.getElementById("addtaskbtn");
-  let webtask = localStorage.getItem("localtask");
-  let taskObj = JSON.parse(webtask);
-  if (webtask === null) {
-    taskObj = [];
-  } else {
-    taskObj = JSON.parse(webtask);
-    taskObj = [];
-  }
-
-  savetaskbtn.style.display = "none";
-  addtaskbtn.style.display = "block";
-  localStorage.setItem("localtask", JSON.stringify(taskObj));
-  showtask();
 });
