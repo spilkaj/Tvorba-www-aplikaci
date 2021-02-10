@@ -125,8 +125,6 @@ class View {
 }
 const app = new Controler(new Model(), new View());
 
-//add notes
-
 showtask();
 let addtaskinput = document.getElementById("addtaskinput");
 let addtaskbtn = document.getElementById("addtaskbtn");
@@ -152,7 +150,6 @@ addtaskbtn.addEventListener("click", function () {
   showtask();
 });
 
-// showtask
 function showtask() {
   let webtask = localStorage.getItem("localtask");
   if (webtask === null) {
@@ -190,7 +187,6 @@ function showtask() {
   addedtasklist.innerHTML = html;
 }
 
-// edittask
 function edittask(index) {
   let saveindex = document.getElementById("saveindex");
   let addtaskbtn = document.getElementById("addtaskbtn");
@@ -204,7 +200,6 @@ function edittask(index) {
   savetaskbtn.style.display = "block";
 }
 
-// savetask
 let savetaskbtn = document.getElementById("savetaskbtn");
 savetaskbtn.addEventListener("click", function () {
   let addtaskbtn = document.getElementById("addtaskbtn");
@@ -225,7 +220,6 @@ savetaskbtn.addEventListener("click", function () {
   showtask();
 });
 
-// deleteitem
 function deleteitem(index) {
   let webtask = localStorage.getItem("localtask");
   let taskObj = JSON.parse(webtask);
@@ -235,7 +229,7 @@ function deleteitem(index) {
 }
 let addedtasklist = document.getElementById("addedtasklist");
 addedtasklist.addEventListener("click", function (e) {
-  // showtask();
+  
   let webtask = localStorage.getItem("localtask");
   let taskObj = JSON.parse(webtask);
 
@@ -257,7 +251,6 @@ addedtasklist.addEventListener("click", function (e) {
       }
     }
 
-    // showtask();
     localStorage.setItem("localtask", JSON.stringify(taskObj));
     showtask();
   }
