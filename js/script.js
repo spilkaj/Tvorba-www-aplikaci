@@ -1,21 +1,3 @@
-        function summonText0(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Procesor";
-                    }
-                    function summonText1(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Základní deska";
-                    }
-                    function summonText2(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Grafická karta";
-                    }
-                    function summonText3(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Operační paměti";
-                    }
-                    function summonText4(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: Pevné disky";
-                    }
-                    function summonText5(){
-                        document.getElementById("text_kapitola").innerHTML = "Kapitola: SSD disk";
-                    } 
 class Controler{
     constructor(model, view){
         this.model = model;
@@ -33,6 +15,7 @@ class Controler{
         let kapitolaRam = document.getElementById("ram")
         let kapitolaHdd = document.getElementById("hdd")
         let kapitolaSsd = document.getElementById("ssd")
+        let video = document.getElementById("video1")
 
         togglePlay.addEventListener("click",function(){
             this.togglePlay();
@@ -64,14 +47,18 @@ class Controler{
         kapitolaSsd.addEventListener("click",function(){
             this.goTo("38");
         }.bind(this))
+        video.addEventListener("timeupdate",function(){
+            this.view.updateTitle();
+        }.bind(this))
         
     }
     togglePlay(){
         let myVideo = document.getElementById("video1")
-        if (myVideo.paused) 
+        if (myVideo.paused){ 
                 myVideo.play(); 
-        else 
+        }else{ 
                 myVideo.pause();
+        }    
     }
     goTo(time){
         let myVideo = document.getElementById("video1")
@@ -85,6 +72,26 @@ class View{
     changeWidth(width){
         let video = document.getElementById("video1");
         video.width = width;
+    }
+    updateTitle(){
+        let video = document.getElementById("video1");
+        let title = document.getElementById("text_kapitola");
+        if(video.currentTime >= 244 && video.currentTime <= 310){
+            title.innerHTML = "Kapitola: Procesor"
+        }else if(video.currentTime >= 126 && video.currentTime <= 201){
+            title.innerHTML = "Kapitola: Základní deska"
+        }else if(video.currentTime >= 106 && video.currentTime <= 124){
+            title.innerHTML = "Kapitola: Grafická karta"
+        }else if(video.currentTime >= 50 && video.currentTime <= 67){
+            title.innerHTML = "Kapitola: Operační paměti"
+        }else if(video.currentTime >= 566 && video.currentTime <= 624){
+            title.innerHTML = "Kapitola: Pevný disk"
+        }else if(video.currentTime >= 38 && video.currentTime <= 49){
+            title.innerHTML = "Kapitola: SSD"
+        }else{
+            title.innerHTML = ""
+        }
+
     }
 }
 const app = new Controler(new Model(),new View());
