@@ -1,36 +1,3 @@
-var myVideo = document.getElementById("video1"); 
-            
-            function makeBig() { 
-                myVideo.width = 1200; 
-            } 
-            
-            function makeSmall() { 
-                myVideo.width = 720; 
-            } 
-            
-            function makeNormal() { 
-                myVideo.width = 1080; 
-            } 
-            
-            function chapter1() { 
-                myVideo.currentTime = 244;
-            } 
-            function chapter2() { 
-                myVideo.currentTime = 126;
-            } 
-            function chapter3() { 
-                myVideo.currentTime = 106;
-            } 
-            function chapter4() { 
-                myVideo.currentTime = 50;
-            } 
-            function chapter5() { 
-                myVideo.currentTime = 566;
-            } 
-            function chapter6() { 
-                myVideo.currentTime = 38;
-            } 
-
         function summonText0(){
                         document.getElementById("text_kapitola").innerHTML = "Kapitola: Procesor";
                     }
@@ -60,6 +27,12 @@ class Controler{
         let makeBig = document.getElementById("makeBig")
         let makeNormal = document.getElementById("makeNormal")
         let makeSmall = document.getElementById("makeSmall")
+        let kapitolaProcesor = document.getElementById("procesor")
+        let kapitolaMotherBoard = document.getElementById("motherBoard")
+        let kapitolaGpu = document.getElementById("gpu")
+        let kapitolaRam = document.getElementById("ram")
+        let kapitolaHdd = document.getElementById("hdd")
+        let kapitolaSsd = document.getElementById("ssd")
 
         togglePlay.addEventListener("click",function(){
             this.togglePlay();
@@ -73,6 +46,25 @@ class Controler{
         makeSmall.addEventListener("click",function(){
             this.view.changeWidth("720");
         }.bind(this))
+        kapitolaProcesor.addEventListener("click",function(){
+            this.goTo("244");
+        }.bind(this))
+        kapitolaMotherBoard.addEventListener("click",function(){
+            this.goTo("126");
+        }.bind(this))
+        kapitolaGpu.addEventListener("click",function(){
+            this.goTo("106");
+        }.bind(this))
+        kapitolaRam.addEventListener("click",function(){
+            this.goTo("50");
+        }.bind(this))
+        kapitolaHdd.addEventListener("click",function(){
+            this.goTo("566");
+        }.bind(this))
+        kapitolaSsd.addEventListener("click",function(){
+            this.goTo("38");
+        }.bind(this))
+        
     }
     togglePlay(){
         let myVideo = document.getElementById("video1")
@@ -81,6 +73,10 @@ class Controler{
         else 
                 myVideo.pause();
     }
+    goTo(time){
+        let myVideo = document.getElementById("video1")
+        myVideo.currentTime = time;
+    }
 }    
 class Model{
 
@@ -88,7 +84,7 @@ class Model{
 class View{
     changeWidth(width){
         let video = document.getElementById("video1");
-        video.width = width
+        video.width = width;
     }
 }
 const app = new Controler(new Model(),new View());
