@@ -8,6 +8,7 @@
             </p><br>
             <p>Do základní desky se instaluje procesor, paměti a rozšiřující karty, připojují se k ní také mechaniky, pevné disky, SSD a další zařízení. Základní desky se od sebe liší například svou velikostí (ATX, mATX) nebo tím, jaké procesory a paměti se do nich mohou instalovat, jaké mají uspořádání či integrované komponenty.
             </p>
+            
         </div>
         <div class="picture">
             <img src="pictures/motherboard.png" alt="Motherboard">
