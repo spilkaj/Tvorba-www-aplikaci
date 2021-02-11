@@ -20,8 +20,8 @@
                     <a href="motherboard.php">Základní deska</a>
                     <a href="grafika.php">Grafická karta</a>
                     <a href="ram.php">Operační paměti</a>
-                    <a href="source.php">Napájecí zdroj</a>
-                    <a href="hddsdd.php">Paměťová média</a>
+                    <a href="source.php">Počítačový zdroj</a>
+                    <a href="hddsdd.php">Pevné disky a SSD</a>
                   </div>
                 </li>
               </ul>    
