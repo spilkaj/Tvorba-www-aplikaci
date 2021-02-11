@@ -15,7 +15,7 @@
             <button id="ssd">SSD disk</button>
         </div>
             <br>
-            <!-- Nový kód -->
+            
             <div class="grid-container">
             <aside>
             <div class="todoList">
@@ -41,7 +41,6 @@
                     </table>
                 </div>
         </aside>
-        <!-- Konec nového kodu -->
 
             <video class="center" controls id="video1" width="1080">
               <source src="video.mp4" type="video/mp4">
