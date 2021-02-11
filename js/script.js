@@ -119,7 +119,7 @@ class View {
     } else if (video.currentTime >= 38 && video.currentTime <= 49) {
       title.innerHTML = "Kapitola: SSD";
     } else {
-      title.innerHTML = "";
+      title.innerHTML = "&nbsp";
     }
   }
 }
