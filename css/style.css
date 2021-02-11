@@ -122,12 +122,34 @@ li.dropdown {
   margin: 3px;
 }
 
+aside {
+  margin-left: 10px;
+}
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+}
+input {
+  margin: 10px 0px;
+  padding: 8px;
+  font-family: "Poppins", sans-serif;
+}
+.displayNote {
+  word-wrap: normal;
+}
+.noteRow {
+  font-family: "Poppins", sans-serif;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 5px;
   grid-template-areas: "notes video .";
+}
+.dummy-element {
+  min-height: 100px;
 }
 footer {
   display: flex;
@@ -141,4 +163,5 @@ footer {
   padding: 15px 20px;
   margin-top: 15px;
   gap: 15px;
+  position: absolute;
 }

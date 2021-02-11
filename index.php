@@ -24,7 +24,7 @@
                 </h3>
                 <div class="form-row">
                     <div class="col-8 mr-sm-2">
-                        <input type="text" class="newNoteInput" placeholder="Přidat novou poznámku ..."
+                        <input type="text" class="newNoteInput" placeholder="Napište poznámku..."
                                id="addtaskinput"/>
                         <input type="hidden" id="saveindex">
                     </div>
@@ -51,7 +51,6 @@
         </div>
             <div id="text_kapitola">Video obsahuje komentář a podkresovou hudbu, zapněte si prosím zvuk!
             </div>
-
             <?php include 'includes/footer.php';?>
         <script src="js/script.js"></script>
 
