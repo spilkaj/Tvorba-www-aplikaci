@@ -40,6 +40,19 @@ button {
   margin: 5px;
 }
 
+.grid-container-text {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 10px;
+  grid-template-areas: "text picture";
+}
+.text{
+  color: rgb(54, 54, 54);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  margin: 0px 15px;
+}
 .velikost_videa {
   color: rgb(54, 54, 54);
   font-family: "Poppins", sans-serif;
@@ -53,6 +66,12 @@ button {
   margin-right: 15px;
 }
 
+img {
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+
+}
 #text_kapitola {
   color: rgb(59, 59, 59);
   font-family: "Poppins", sans-serif;
